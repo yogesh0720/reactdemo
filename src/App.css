@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.search-header {
+  display: flex;
+}
+.search-text {
+  margin-right: 10px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#search-box {
+  height: 25px;
+}
+#search-box[placeholder] {
+  line-height: 25px;
+  font-size: 25px;
+}
