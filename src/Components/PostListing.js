@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { List } from "react-virtualized";
 
 const baseURL = process.env.REACT_APP_API_URL
@@ -26,13 +26,11 @@ const PostListing = () => {
     getAllData();
   }, []);
 
-  const navigate = useNavigate();
-
   const deletePostData = async (id) => {
     try {
       const response = await axios.delete(`${baseURL}/${id}`);
       console.log(response.data);
-      navigate("/");
+      getAllData();
     } catch (e) {
       console.log(e);
     }
